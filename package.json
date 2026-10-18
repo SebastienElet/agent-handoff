@@ -1,0 +1,57 @@
+{
+  "name": "@sebastienelet/agent-handoff",
+  "version": "1.0.0",
+  "description": "Context-aware session handoff hook and companion skill for coding agents.",
+  "type": "module",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastienElet/agent-handoff.git"
+  },
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "bun": "1.4.3"
+  },
+  "bin": {
+    "agent-handoff": "bin/agent-handoff.ts"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "src/",
+    "tests/",
+    "scripts/",
+    "packages/*/package.json",
+    "THIRD_PARTY_LICENSES",
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    "rustfmt.toml",
+    "clippy.toml",
+    "tsconfig.json",
+    "bun.lock"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "bun test bin",
+    "typecheck": "tsc --noEmit",
+    "package:native": "bun scripts/package-native.ts"
+  },
+  "dependencies": {
+    "zod": "4.6.6"
+  },
+  "optionalDependencies": {
+    "@sebastienelet/agent-handoff-darwin-arm64": "1.0.0",
+    "@sebastienelet/agent-handoff-linux-x64-gnu": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "typescript": "7.0.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@sebastienelet/agent-handoff-darwin-arm64",
+  "version": "1.0.0",
+  "description": "Native macOS ARM64 binary for agent-handoff.",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastienElet/agent-handoff.git"
+  },
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "files": [
+    "bin/agent-handoff",
+    "BUILD.json",
+    "LICENSE",
+    "THIRD_PARTY_LICENSES"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

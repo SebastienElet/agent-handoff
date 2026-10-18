@@ -70,6 +70,6 @@ fenced block for the user to paste into a new session.
 - Never invent progress: only claim what was actually run and verified in this session.
 - Keep the block self-contained — the next session sees no part of this conversation.
 - Outside a workflow that requires a report, do not write the handoff to a file unless the user
-   asks; the deliverable is text to paste. An enclosing workflow's report obligation still applies.
+  asks; the deliverable is text to paste. An enclosing workflow's report obligation still applies.
 - Do not attempt to disable or block compaction from the skill — that is the hook's job, via the
-   threshold in `agent-handoff`.
+  threshold in `agent-handoff`.
