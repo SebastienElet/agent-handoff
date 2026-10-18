@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 24.21.0
           package-manager-cache: false
-      - uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           path: artifacts
       - run: npm publish artifacts/darwin-arm64/native.tgz --access public --provenance --registry https://registry.npmjs.org --ignore-scripts
