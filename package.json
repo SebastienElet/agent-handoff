@@ -40,7 +40,7 @@
     "package:native": "bun scripts/package-native.ts"
   },
   "dependencies": {
-    "zod": "4.6.6"
+    "zod": "4.6.7"
   },
   "optionalDependencies": {
     "@sebastienelet/agent-handoff-darwin-arm64": "0.0.1",
