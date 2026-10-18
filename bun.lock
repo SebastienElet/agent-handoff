@@ -12,17 +12,17 @@
         "typescript": "7.0.2",
       },
       "optionalDependencies": {
-        "@sebastienelet/agent-handoff-darwin-arm64": "1.0.0",
-        "@sebastienelet/agent-handoff-linux-x64-gnu": "1.0.0",
+        "@sebastienelet/agent-handoff-darwin-arm64": "0.0.1",
+        "@sebastienelet/agent-handoff-linux-x64-gnu": "0.0.1",
       },
     },
     "packages/agent-handoff-darwin-arm64": {
       "name": "@sebastienelet/agent-handoff-darwin-arm64",
-      "version": "1.0.0",
+      "version": "0.0.1",
     },
     "packages/agent-handoff-linux-x64-gnu": {
       "name": "@sebastienelet/agent-handoff-linux-x64-gnu",
-      "version": "1.0.0",
+      "version": "0.0.1",
     },
   },
   "packages": {

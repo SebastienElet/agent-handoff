@@ -23,9 +23,10 @@ jobs:
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: 24.21.0
+          package-manager-cache: false
       - uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3 # v8.0.0
         with:
           path: artifacts
-      - run: npm publish artifacts/darwin-arm64/native.tgz --access public --provenance
-      - run: npm publish artifacts/linux-x64-gnu/native.tgz --access public --provenance
-      - run: npm publish artifacts/darwin-arm64/entry.tgz --access public --provenance
+      - run: npm publish artifacts/darwin-arm64/native.tgz --access public --provenance --registry https://registry.npmjs.org --ignore-scripts
+      - run: npm publish artifacts/linux-x64-gnu/native.tgz --access public --provenance --registry https://registry.npmjs.org --ignore-scripts
+      - run: npm publish artifacts/darwin-arm64/entry.tgz --access public --provenance --registry https://registry.npmjs.org --ignore-scripts
