@@ -1,6 +1,6 @@
 {
   "name": "@sebastienelet/agent-handoff-darwin-arm64",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Native macOS ARM64 binary for agent-handoff.",
   "license": "BSD-2-Clause",
   "repository": {

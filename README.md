@@ -5,7 +5,7 @@ skill when the configured context threshold is reached. The hook emits a request
 executes the skill and writes a resume prompt. The user or enclosing workflow creates the next
 session. No session is created by this package.
 
-The first autonomous release is prepared as `1.0.0`; it has not been published or qualified from
+The first autonomous release is prepared as `0.0.1`; it has not been published or qualified from
 the registry. Supported release targets are macOS ARM64 and Linux x64 glibc, with native builds
 and consumption checks on macOS 26 and Ubuntu 24.04 runners. Other architectures, musl and Windows
 are unsupported. A local build does not establish compatibility with every OS or glibc version.
@@ -16,7 +16,7 @@ After publication, use Bun 1.4.3 in a durable, dedicated directory:
 
 ```sh
 bun init -y
-bun add --exact @sebastienelet/agent-handoff@1.0.0
+bun add --exact @sebastienelet/agent-handoff@0.0.1
 ```
 
 Commit that installation's manifest and `bun.lock`; subsequent installations use
@@ -102,8 +102,8 @@ release workflow builds each variant on its target, packs with Bun, and publishe
 before the entry package using only `npm publish --provenance` with OIDC. Configure trusted
 publishing for all three packages against `publish.yml` in the public source repository, with
 the `npm` environment. npm requires a preconfigured trusted publisher and a supported Node/npm
-version ([official setup](https://docs.npmjs.com/trusted-publishers/)). The repository and publisher
-configuration do not exist yet. After a partial/uncertain publish, inspect the exact versions,
+version ([official setup](https://docs.npmjs.com/trusted-publishers/)). Trusted publisher configuration
+is still required for each package. After a partial/uncertain publish, inspect the exact versions,
 integrities and provenance in the registry before any retry; publication is not atomic.
 
 Before recommending a release, install it from the registry with Bun on both targets without
