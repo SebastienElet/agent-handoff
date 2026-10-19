@@ -195,7 +195,7 @@ fn invalid_positive_integer_forms_are_rejected() -> TestResult {
 fn handoff_output_matches_claude_hook_bytes() -> TestResult {
     assert_eq!(
         handoff_output(&claude(85_000), 85_000)?,
-        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, then stop.\"\n}\n",
+        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, preserving useful rejected attempts and their evidence, constraints and permissions, open decisions, verification limits and unfinished work, then stop.\"\n}\n",
     );
     Ok(())
 }
@@ -204,7 +204,7 @@ fn handoff_output_matches_claude_hook_bytes() -> TestResult {
 fn handoff_output_uses_codex_invocation_and_token_floors() -> TestResult {
     assert_eq!(
         handoff_output(&codex(85_999, MAX_SAFE_INTEGER), 50_999)?,
-        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 50k handoff threshold. Start no new work. Use $handoff to emit the resume prompt for a fresh session, then stop.\"\n}\n",
+        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 50k handoff threshold. Start no new work. Use $handoff to emit the resume prompt for a fresh session, preserving useful rejected attempts and their evidence, constraints and permissions, open decisions, verification limits and unfinished work, then stop.\"\n}\n",
     );
     Ok(())
 }

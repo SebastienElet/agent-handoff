@@ -79,7 +79,7 @@ test("the distributed entry emits a request at the threshold and suppresses repl
   expect(JSON.parse(first.stdout.toString())).toEqual({
     decision: "block",
     reason:
-      "Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, then stop.",
+      "Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, preserving useful rejected attempts and their evidence, constraints and permissions, open decisions, verification limits and unfinished work, then stop.",
   });
   expect(
     readFileSync(join(state, "dotfiles/handoff/packaged")).byteLength,

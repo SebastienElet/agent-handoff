@@ -35,22 +35,31 @@ fenced block for the user to paste into a new session.
 1. Stop the current work — do not start a new edit, search, or tool loop.
 2. Finish making the work durable: save unsaved files and, if a change is complete and the user
    asked for it, commit it. A resume prompt pointing at lost edits is worthless.
-   If the enclosing workflow requires a durable report, update that report and reference it in
-   the prompt. Follow that workflow's session and checkout ownership rules.
+   If the enclosing workflow requires a durable report, update that existing report and reference
+   it in the prompt; do not create a competing report. Follow that workflow's session and checkout
+   ownership rules.
 3. Write the resume prompt as one fenced block, addressed to the next agent, in the language of the
-   conversation, covering exactly:
-   - **Goal** — the task in one or two sentences, including the user's own constraints.
+   conversation, covering:
+   - **Goal** — the task in one or two sentences, including constraints and acquired permissions.
    - **Done** — what is already done and verified, with file paths.
-   - **Next step** — the single next concrete action.
+   - **Next step** — the single next concrete action, identifying any half-done step.
    - **Files** — the paths the next session needs to read first.
-4. Keep it under ~200 words. Name files instead of quoting them; the next session can read them.
+   - **Carry forward**, when needed — useful rejected attempts and their evidence, open decisions
+     and verification limits, including tests not run and platforms not exercised. State what was
+     ruled out and why; tell the next agent not to retry it without new facts. Keep unresolved
+     decisions separate from acquired permissions. Leave implementation discovery to the next agent
+     rather than prescribing a solution.
+4. Aim for ~200 words for a simple case; this is not a length cap. Preserve all information that
+   conditions the next action. Replace detail with a durable reference only when the next agent can
+   actually access it and it contains that information. Otherwise include the necessary evidence
+   in the prompt, especially when it exists only in this conversation.
 5. End your turn immediately after the block. Do not add follow-up work or offer to continue.
 
 ## Gotchas
 
 - **Summarising the conversation instead of the state** — a handoff is not a transcript summary.
-  Drop abandoned approaches, tool noise, and anything the next agent can read from a file; keep only
-  what it needs to act.
+  Drop inconsequential abandoned ideas and tool noise, but retain rejected attempts whose evidence
+  prevents repetition. A file path cannot replace evidence that was never saved there.
 - **Emitting the prompt and then continuing to work** — the point is to end the session before
   compaction. Any further tool call adds context and defeats it, so stop after the block.
 - **Leaving work uncommitted** — the next session inherits the working tree, not the reasoning. State

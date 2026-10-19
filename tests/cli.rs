@@ -120,7 +120,7 @@ fn threshold_usage_writes_exact_block_bytes_and_creates_the_sentinel() -> TestRe
     assert_eq!(output.status.code(), Some(0));
     assert_eq!(
         output.stdout,
-        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, then stop.\"\n}\n"
+        b"{\n  \"decision\": \"block\",\n  \"reason\": \"Context is at 85k tokens, past the 85k handoff threshold. Start no new work. Use /handoff to emit the resume prompt for a fresh session, preserving useful rejected attempts and their evidence, constraints and permissions, open decisions, verification limits and unfinished work, then stop.\"\n}\n"
     );
     assert_eq!(output.stderr, b"");
     assert!(fixture.sentinel("block").is_file());
