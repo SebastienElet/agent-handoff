@@ -46,7 +46,7 @@ pub fn handoff_output(usage: &Usage, threshold: u64) -> Result<Vec<u8>, HandoffE
         Agent::Codex => "$handoff",
     };
     let reason = format!(
-        "Context is at {}k tokens, past the {}k handoff threshold. Start no new work. Use {invocation} to emit the resume prompt for a fresh session, then stop.",
+        "Context is at {}k tokens, past the {}k handoff threshold. Start no new work. Use {invocation} to emit the resume prompt for a fresh session, preserving useful rejected attempts and their evidence, constraints and permissions, open decisions, verification limits and unfinished work, then stop.",
         usage.used.div_euclid(TOKENS_PER_THOUSAND),
         threshold.div_euclid(TOKENS_PER_THOUSAND),
     );
