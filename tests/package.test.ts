@@ -28,6 +28,12 @@ test("local tarballs install and run outside the source checkout without workspa
             "dist/native.tgz",
           ),
         },
+        overrides: {
+          [`@sebastienelet/agent-handoff-${variant}`]: join(
+            source,
+            "dist/native.tgz",
+          ),
+        },
       }),
     );
     const install = Bun.spawnSync(
