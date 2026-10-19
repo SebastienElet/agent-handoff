@@ -227,14 +227,14 @@ test("a mismatched variant version cannot execute", () => {
   const { state, launcher } = isolatedLauncher("0.9.0");
   const result = invoke("{}", state, "100000", launcher);
   expect(result.exitCode).toBe(3);
-  expect(result.stderr.toString()).toContain("0.0.1");
+  expect(result.stderr.toString()).toContain(manifest.version);
   expect(existsSync(state)).toBe(false);
 });
 
 test.each([false, true])(
   "a missing or nonexecutable native binary fails visibly: %s",
   (binary) => {
-    const { state, launcher } = isolatedLauncher("0.0.1", binary);
+    const { state, launcher } = isolatedLauncher(manifest.version, binary);
     const result = invoke("{}", state, "100000", launcher);
     expect(result.exitCode).toBe(3);
     expect(result.stdout.toString()).toBe("");

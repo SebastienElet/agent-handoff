@@ -5,8 +5,7 @@ skill when the configured context threshold is reached. The hook emits a request
 executes the skill and writes a resume prompt. The user or enclosing workflow creates the next
 session. No session is created by this package.
 
-The first autonomous release is prepared as `0.0.1`; it has not been published or qualified from
-the registry. Supported release targets are macOS ARM64 and Linux x64 glibc, with native builds
+Supported release targets are macOS ARM64 and Linux x64 glibc, with native builds
 and consumption checks on macOS 26 and Ubuntu 24.04 runners. Other architectures, musl and Windows
 are unsupported. A local build does not establish compatibility with every OS or glibc version.
 
@@ -16,7 +15,7 @@ After publication, use Bun 1.4.3 in a durable, dedicated directory:
 
 ```sh
 bun init -y
-bun add --exact @sebastienelet/agent-handoff@0.0.1
+bun add --exact @sebastienelet/agent-handoff@0.0.2
 ```
 
 Commit that installation's manifest and `bun.lock`; subsequent installations use

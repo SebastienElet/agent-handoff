@@ -1,6 +1,6 @@
 {
   "name": "@sebastienelet/agent-handoff-linux-x64-gnu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Native Linux x64 glibc binary for agent-handoff.",
   "license": "BSD-2-Clause",
   "repository": {

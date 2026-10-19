@@ -1,6 +1,6 @@
 [package]
 name = "agent-handoff"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "Context-aware handoff decisions for coding-agent hooks."
 license-file = "LICENSE"

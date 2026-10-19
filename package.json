@@ -1,6 +1,6 @@
 {
   "name": "@sebastienelet/agent-handoff",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Context-aware session handoff hook and companion skill for coding agents.",
   "type": "module",
   "license": "BSD-2-Clause",
@@ -43,8 +43,8 @@
     "zod": "4.6.7"
   },
   "optionalDependencies": {
-    "@sebastienelet/agent-handoff-darwin-arm64": "0.0.1",
-    "@sebastienelet/agent-handoff-linux-x64-gnu": "0.0.1"
+    "@sebastienelet/agent-handoff-darwin-arm64": "0.0.2",
+    "@sebastienelet/agent-handoff-linux-x64-gnu": "0.0.2"
   },
   "devDependencies": {
     "@types/bun": "1.4.3",
